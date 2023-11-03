@@ -50,7 +50,7 @@ module.exports = {
         name: "RAZER DEATHADDER V2",
         category: "mouse",
         description:
-          "Witness an icon reborn with the Razer DeathAdder V2—an ergonomic mouse designed with deadly curves and killer lines for a weapon that handles like no other. With next-gen sensor and switches packed into a lighter form factor, a new era of high-performance gaming has already taken shape.",
+          "Witness an icon reborn with the Razer DeathAdder V2—an ergonomic mouse designed with deadly curves and killer lines for a weapon that handles like no other. With next-gen sensor and switches packed into a lighter form factor.",
         price: 69.99,
       },
     ]);
