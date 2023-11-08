@@ -1,1 +1,123 @@
 /* TODO Add site wide styles */
+
+#root {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+}
+
+.header {
+  display: flex;
+  background-color: white;
+  font-family: "Kanit", sans-serif;
+  border-bottom: 1px gray solid;
+  width: 100vw;
+  height: 80px;
+  padding: 0;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-button {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #2b2a29;
+  border: none;
+  color: white;
+}
+
+.profile-dropdown > .hidden {
+  position: absolute;
+}
+
+.profile-dropdown {
+  position: absolute;
+}
+
+.dropdowncontainer {
+  position: static;
+  right: 1px;
+  top: 7px;
+  background-color: white;
+  border-radius: 5px;
+  width: 150px;
+  max-width: 150px;
+  border-top: 5px solid rgba(0, 183, 255, 0.5);
+  z-index: -1;
+  text-align: center;
+  height: fit-content;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.move {
+  position: relative;
+  z-index: 1;
+}
+
+.rating-input .filled {
+  color: #ff4655;
+}
+
+.rating-input .empty {
+  color: rgb(139, 85, 85);
+}
+
+.nav-logo > a {
+  text-decoration: none;
+  font-size: 32pt;
+  color: orange;
+}
+
+.welcome-user {
+  font-size: 18pt;
+}
+
+.shop-category-header {
+  font-size: 24pt;
+  margin-top: 25px;
+}
+
+.category-desc {
+  margin-top: 10px;
+}
+
+img {
+  height: 250px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.category-cards {
+  display: flex;
+  text-align: center;
+  gap: 100px;
+  margin-top: 50px;
+}

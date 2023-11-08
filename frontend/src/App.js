@@ -6,6 +6,9 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import CategoryPage from "./components/CategoryPage";
 import ProductPage from "./components/ProductPage";
+import CreateProductPage from "./components/CreateProductPage";
+import ManageProducts from "./components/ManagePage";
+import UpdateProductPage from "./components/UpdateProductPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +24,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/c/:category" component={CategoryPage} />
+          <Route exact path="/products/create" component={CreateProductPage} />
+          <Route exact path="/products/current" component={ManageProducts} />
+          <Route
+            path="/products/:productId/edit"
+            component={UpdateProductPage}
+          />
           <Route path="/products/:productId" component={ProductPage} />
         </Switch>
       )}
