@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { loadProductsThunk } from "../../store/products";
 import { useParams } from "react-router-dom";
+import ProductReviews from "./ProductReviews";
 
 function ProductPage() {
   const dispatch = useDispatch();
@@ -24,9 +25,13 @@ function ProductPage() {
 
   return (
     <>
+      <img src={singleProduct.previewImage} />
       <div>{singleProduct.name}</div>
       <div>{singleProduct.price}</div>
       <div>{singleProduct.description}</div>
+      <div>
+        <ProductReviews singleProduct={singleProduct} />
+      </div>
     </>
   );
 }

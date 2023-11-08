@@ -5,6 +5,7 @@ import * as sessionActions from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import { NavLink } from "react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -39,38 +40,65 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
-      <ul className={ulClassName} ref={ulRef}>
-        {user ? (
-          <>
-            <li>{user.username}</li>
-            <li>
-              {user.firstName} {user.lastName}
-            </li>
-            <li>{user.email}</li>
-            <li>
-              <button onClick={logout}>Log Out</button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <OpenModalButton
-                buttonText="Log In"
-                modalComponent={<LoginFormModal />}
-              />
-            </li>
-            <li>
-              <OpenModalButton
-                buttonText="Sign Up"
-                modalComponent={<SignupFormModal />}
-              />
-            </li>
-          </>
-        )}
-      </ul>
+      {user ? (
+        <>
+          <div className="menu">
+            <button onClick={openMenu} className="profile-button">
+              {/* <img src={menuicon} className="menu"></img> */}
+              <i className="fa fa-bars"></i>
+              <i className="fas fa-user-circle" />
+            </button>
+
+            <div className={ulClassName} ref={ulRef}>
+              <div className="dropdowncontainer move">
+                <div className="menu-user">{user.username}</div>
+                <div className="menu-name">{user.firstName}</div>
+                <div className="menu-email">{user.email}</div>
+                <div className="manage-products-button">
+                  <NavLink
+                    className="manage-products-link"
+                    to="/products/current"
+                  >
+                    Manage Products
+                  </NavLink>
+                </div>
+                <div>
+                  <button className="log-out-button" onClick={logout}>
+                    Log Out
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="menu">
+            <button onClick={openMenu} className="profile-button">
+              {/* <img src={menuicon} className="menu"></img> */}
+              <i className="fa fa-bars"></i>
+              <i className="fas fa-user-circle" />
+            </button>
+
+            <div className={ulClassName} ref={ulRef}>
+              <div className="dropdowncontainer move">
+                <div className="sign-up-button">
+                  <OpenModalButton
+                    buttonText="Sign Up"
+                    modalComponent={<SignupFormModal />}
+                  />
+                </div>
+                <div className="log-in-button">
+                  <OpenModalButton
+                    buttonText="Log In"
+                    modalComponent={<LoginFormModal />}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
