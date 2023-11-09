@@ -5,6 +5,7 @@ import OpenModalButton from "../OpenModalButton";
 import PostReview from "../PostReview";
 import DeleteReview from "../DeleteReview";
 import { loadSingleProductThunk } from "../../store/products";
+import UpdateReview from "../UpdateReviewModal";
 
 function SpotReviews({ singleProduct }) {
   const dispatch = useDispatch();
@@ -72,6 +73,18 @@ function SpotReviews({ singleProduct }) {
 
   return (
     <>
+      {sessionUser &&
+        !userReview &&
+        singleProduct.User.id !== sessionUser.id && (
+          <div className="post-review-button">
+            <OpenModalButton
+              buttonText="Post Your Review"
+              modalComponent={
+                <PostReview user={sessionUser} singleProduct={singleProduct} />
+              }
+            />
+          </div>
+        )}
       {productReviews
         .map((review) => (
           <div key={review.id} className="one-review">
@@ -83,17 +96,31 @@ function SpotReviews({ singleProduct }) {
               })}
             </div>
             <div className="review-comment">{review.review}</div>
+
             {sessionUser.id === review?.User?.id ? (
-              <div className="delete-review-button">
-                <OpenModalButton
-                  buttonText="Delete"
-                  modalComponent={
-                    <DeleteReview
-                      review={review}
-                      singleProduct={singleProduct}
-                    />
-                  }
-                />
+              <div className="update-delete-button">
+                <div className="update-review-button">
+                  <OpenModalButton
+                    buttonText="Update"
+                    modalComponent={
+                      <UpdateReview
+                        review={review}
+                        singleProduct={singleProduct}
+                      />
+                    }
+                  />
+                </div>
+                <div className="delete-review-button">
+                  <OpenModalButton
+                    buttonText="Delete"
+                    modalComponent={
+                      <DeleteReview
+                        review={review}
+                        singleProduct={singleProduct}
+                      />
+                    }
+                  />
+                </div>
               </div>
             ) : null}
           </div>
