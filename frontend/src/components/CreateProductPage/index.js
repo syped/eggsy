@@ -6,12 +6,13 @@ import {
 } from "../../store/products";
 import { useParams, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function CreateProductPage() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  //   const user = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session.user);
   //   const allProducts = useSelector(
   //     (state) => state.product.allProducts.Products
   //   );
@@ -49,6 +50,10 @@ function CreateProductPage() {
 
     setValidationErrors(errors);
   }, [name, category, description, price, previewImage, images]);
+
+  if (!user) {
+    return <Redirect to="/"></Redirect>;
+  }
 
   const submitProduct = async (e) => {
     e.preventDefault();

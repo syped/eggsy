@@ -6,6 +6,7 @@ import {
 } from "../../store/products";
 import { useParams, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function UpdateProductPage() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function UpdateProductPage() {
   const { productId } = useParams();
 
   const product = useSelector((state) => state.product.singleProduct);
+  const user = useSelector((state) => state.session.user);
 
   const [name, setName] = useState(product.name);
   const [category, setCategory] = useState(product.category);
@@ -31,6 +33,14 @@ function UpdateProductPage() {
     setDescription(product.description || "");
     setPrice(product.price || "");
   }, [product]);
+
+  useEffect(() => {
+    setCategory(product.category || "");
+  }, [product.category]);
+
+  if (!user) {
+    return <Redirect to="/"></Redirect>;
+  }
 
   const submitProduct = async (e) => {
     e.preventDefault();
@@ -106,7 +116,7 @@ function UpdateProductPage() {
                 defaultValue={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="" disabled defaultValue={category}>
+                <option value="" disabled>
                   Select Category
                 </option>
                 <option value="mouse">Gaming Mouse</option>
