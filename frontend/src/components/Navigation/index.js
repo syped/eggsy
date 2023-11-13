@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import logo from "../../assets/eggsylogo.png";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -25,7 +26,9 @@ function Navigation({ isLoaded }) {
       <div className="header-content">
         <div className="nav-header-left">
           <div className="nav-logo">
-            <NavLink to="/">Eggsy</NavLink>
+            <NavLink to="/">
+              <img src={logo} className="eggsy-logo" />
+            </NavLink>
           </div>
         </div>
         <div className="nav-header-right">

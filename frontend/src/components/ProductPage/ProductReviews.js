@@ -15,7 +15,7 @@ function SpotReviews({ singleProduct }) {
   const product = useSelector((state) => state.product.singleProduct);
 
   useEffect(() => {
-    dispatch(loadSingleProductThunk(singleProduct.id));
+    // dispatch(loadSingleProductThunk(singleProduct.id));
     dispatch(getReviewsThunk(singleProduct.id));
   }, [dispatch, singleProduct]);
 

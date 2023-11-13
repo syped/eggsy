@@ -45,7 +45,7 @@ function ProfileButton({ user }) {
           <div className="menu">
             <button onClick={openMenu} className="profile-button">
               {/* <img src={menuicon} className="menu"></img> */}
-              <i className="fa fa-bars"></i>
+              {/* <i className="fa fa-bars"></i> */}
               <i className="fas fa-user-circle" />
             </button>
 
@@ -54,6 +54,14 @@ function ProfileButton({ user }) {
                 <div className="menu-user">{user.username}</div>
                 <div className="menu-name">{user.firstName}</div>
                 <div className="menu-email">{user.email}</div>
+                <div className="create-products-button">
+                  <NavLink
+                    className="create-products-link"
+                    to="/products/create"
+                  >
+                    Create Products
+                  </NavLink>
+                </div>
                 <div className="manage-products-button">
                   <NavLink
                     className="manage-products-link"
@@ -76,7 +84,7 @@ function ProfileButton({ user }) {
           <div className="menu">
             <button onClick={openMenu} className="profile-button">
               {/* <img src={menuicon} className="menu"></img> */}
-              <i className="fa fa-bars"></i>
+              {/* <i className="fa fa-bars"></i> */}
               <i className="fas fa-user-circle" />
             </button>
 

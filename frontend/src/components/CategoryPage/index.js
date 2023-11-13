@@ -38,9 +38,13 @@ function CategoryPage() {
     <>
       <div className="products">
         {productList.map((product) => (
-          <NavLink to={`/products/${product.id}`}>
-            <div key={product.id}>{product.name}</div>
-          </NavLink>
+          <div key={product.id} className="product">
+            <NavLink to={`/products/${product.id}`}>
+              <img src={product.previewImage} />
+              <div className="product-name">{product.name}</div>
+              <div className="product-price"> ${product.price}</div>
+            </NavLink>
+          </div>
         ))}
       </div>
     </>

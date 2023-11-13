@@ -8,7 +8,7 @@ function DeleteButton({ product }) {
   const { closeModal } = useModal();
   const [exists, setExists] = useState(true);
 
-  const confirmDelete = (e) => {
+  const confirmDelete = async (e) => {
     e.preventDefault();
     dispatch(deleteProductThunk(product.id)).then(closeModal);
     setExists(false);
