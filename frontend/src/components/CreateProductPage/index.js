@@ -70,7 +70,7 @@ function CreateProductPage() {
       const response = await dispatch(createProductThunk(newProduct));
 
       if (response) {
-        dispatch(createProductImagesThunk(newPreviewImage, response.id));
+        await dispatch(createProductImagesThunk(newPreviewImage, response.id));
 
         for (let i = 0; i < images.length; i++) {
           const image = images[i];
@@ -81,7 +81,7 @@ function CreateProductPage() {
           };
 
           if (image) {
-            dispatch(createProductImagesThunk(newImage, response.id));
+            await dispatch(createProductImagesThunk(newImage, response.id));
           }
         }
 
@@ -102,6 +102,7 @@ function CreateProductPage() {
       <div className="create-product">
         <h2 className="create-listing">Create a Listing</h2>
         <form onSubmit={submitProduct}>
+          <div className="preview-image-header">Preview Image</div>
           <div className="section-1">
             <input
               type="file"
@@ -115,6 +116,7 @@ function CreateProductPage() {
               <input
                 key={index}
                 type="file"
+                accept="image/*"
                 onChange={(e) => updateImages(e.target.files[0], index)}
               />
             ))}

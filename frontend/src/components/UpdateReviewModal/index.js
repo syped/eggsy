@@ -20,6 +20,17 @@ function UpdateReview({ review, singleProduct }) {
     setRating(parseInt(number));
   };
 
+  useEffect(() => {
+    const errors = {};
+
+    if (!comment) errors.comment = "Review is required";
+    if (comment && comment.length < 10)
+      errors.comment = "Review must be more than 10 characters";
+    if (!activeRating) errors.rating = "Star rating is required";
+
+    setValidationErrors(errors);
+  }, [comment, activeRating]);
+
   const submitReview = async (e) => {
     e.preventDefault();
     setHasSubmitted(true);
@@ -32,34 +43,26 @@ function UpdateReview({ review, singleProduct }) {
       stars: rating,
     };
 
-    const response = await dispatch(updateReviewThunk(updatedReview)).catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) {
-          setValidationErrors(data.errors);
-        }
-      }
-    );
-    dispatch(getReviewsThunk(singleProduct.id));
-    await dispatch(loadProductsThunk());
+    if (Object.keys(validationErrors).length === 0) {
+      const response = await dispatch(updateReviewThunk(updatedReview));
+      dispatch(getReviewsThunk(singleProduct.id));
+      await dispatch(loadProductsThunk());
 
-    closeModal();
+      closeModal();
 
-    setComment("");
-    setRating(0);
-    setHasSubmitted(false);
-    return null;
+      setComment("");
+      setRating(0);
+      setHasSubmitted(false);
+      return null;
+    }
   };
 
   return (
     <div className="review-modal">
       <h2>Leave a review!</h2>
       <form onSubmit={submitReview}>
-        {hasSubmitted && validationErrors.reviews && (
-          <div className="error">{validationErrors.reviews}</div>
-        )}
-        {hasSubmitted && validationErrors.stars && (
-          <div className="error">{validationErrors.stars}</div>
+        {hasSubmitted && validationErrors.comment && (
+          <div className="error">{validationErrors.comment}</div>
         )}
         <textarea
           className="post-comment"
@@ -142,11 +145,10 @@ function UpdateReview({ review, singleProduct }) {
             Stars
           </div>
         </label>
-        <button
-          className="submit-review"
-          type="submit"
-          disabled={comment.length < 10 || rating === 0}
-        >
+        {hasSubmitted && validationErrors.rating && (
+          <div className="error">{validationErrors.rating}</div>
+        )}
+        <button className="submit-review" type="submit">
           Submit Your Review
         </button>
       </form>

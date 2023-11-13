@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
+  loadProductsThunk,
   loadSingleProductThunk,
   updateProductThunk,
 } from "../../store/products";
@@ -56,6 +57,7 @@ function UpdateProductPage() {
 
     if (Object.keys(validationErrors).length === 0) {
       const response = await dispatch(updateProductThunk(updatedProduct));
+      await dispatch(loadProductsThunk());
 
       if (response) {
         history.push(`/products/${response.id}`);
@@ -100,7 +102,10 @@ function UpdateProductPage() {
 
             <label className="input-category">
               Category
-              <select onChange={(e) => setCategory(e.target.value)}>
+              <select
+                defaultValue={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="" disabled defaultValue={category}>
                   Select Category
                 </option>

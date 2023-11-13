@@ -31,9 +31,12 @@ function ManageProducts() {
         <div className="products">
           {userProductsArr.map((product) => (
             <div key={product.id}>
-              <NavLink to={`/products/${product.id}`}>
-                <div className="product">{product.name}</div>
-              </NavLink>
+              <div className="product">
+                <NavLink to={`/products/${product.id}`}>
+                  <img src={product.previewImage} />
+                  <div className="product-name">{product.name}</div>
+                </NavLink>
+              </div>
               <div className="update-delete">
                 <NavLink to={`/products/${product.id}/edit`}>
                   <button className="product-update-button">Update</button>

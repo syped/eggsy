@@ -25,21 +25,33 @@ function LandingPage() {
         Shop for mice, keyboards, headsets, and more to level up your game!
       </div>
       <div className="category-cards">
-        <NavLink to={`/c/gaming-mice`}>
-          <img src="https://cdn.mos.cms.futurecdn.net/KBo2a9UTWERNw38QyfBhPm-1200-80.jpeg" />
-          <div className="mouse-card">Gaming Mice</div>
+        <NavLink className="mouse-card" to={`/c/gaming-mice`}>
+          <img
+            className="mouse-img"
+            src="https://eggsy.s3.amazonaws.com/seed+images/g502-lightspeed-gallery-1.png"
+          />
+          <div>Gaming Mice</div>
         </NavLink>
-        <NavLink to={`/c/gaming-keyboards`}>
-          <img src="https://media.wired.com/photos/61044c948eb98ab033ce464e/191:100/w_2580,c_limit/Gear-Logitech-G413-Keyboard.jpg" />
-          <div className="keyboard-card">Gaming Keyboards</div>
+        <NavLink className="keyboard-card" to={`/c/gaming-keyboards`}>
+          <img
+            className="keyboard-img"
+            src="https://eggsy.s3.amazonaws.com/seed+images/black_shark_one_hand_mechanical_gaming_keyboard-.png"
+          />
+          <div>Gaming Keyboards</div>
         </NavLink>
-        <NavLink to={`/c/gaming-headsets`}>
-          <img src="https://media.accobrands.com/media/560-560/450139.jpg" />
-          <div className="headset-card">Gaming Headsets</div>
+        <NavLink className="headset-card" to={`/c/gaming-headsets`}>
+          <img
+            className="headset-img"
+            src="https://eggsy.s3.amazonaws.com/seed+images/hyperx_-_cloud_alpha.png"
+          />
+          <div>Gaming Headsets</div>
         </NavLink>
-        <NavLink to={`/c/gaming-monitors`}>
-          <img src="https://i.pcmag.com/imagery/reviews/04NYZ3baAImtjHfPURtQ8og-1..v1673384999.jpg" />
-          <div className="monitor-card">Gaming Monitors</div>
+        <NavLink className="monitor-card" to={`/c/gaming-monitors`}>
+          <img
+            className="monitor-img"
+            src="https://eggsy.s3.amazonaws.com/seed+images/1658862796-canvas-27q-hero-black-wallpaper.png"
+          />
+          <div>Gaming Monitors</div>
         </NavLink>
       </div>
       {/* <div className="products">

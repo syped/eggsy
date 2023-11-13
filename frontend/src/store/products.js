@@ -169,9 +169,12 @@ const productReducer = (state = initialState, action) => {
     case UPDATE_PRODUCT:
       return { ...state, singleProduct: action.product };
     case DELETE_PRODUCT:
-      const newState = { ...state };
-      delete newState[action.productId];
-      return newState;
+      // const newState = { ...state };
+      delete newProducts[action.productId];
+      return {
+        ...state,
+        allProducts: newProducts,
+      };
     default:
       return state;
   }
