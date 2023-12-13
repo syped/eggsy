@@ -20,7 +20,7 @@ function SpotReviews({ singleProduct }) {
 
   if (!sessionUser) {
     return productReviews
-      .map((review) => (
+      ?.map((review) => (
         <div key={review.id} className="one-review">
           <div className="review-firstName">
             {review?.User?.firstName}{" "}

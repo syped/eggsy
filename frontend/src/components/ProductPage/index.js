@@ -92,7 +92,10 @@ function ProductPage() {
             <ProductReviews singleProduct={singleProduct} />
           </div>
         ) : (
-          <div className="review-header">No Reviews</div>
+          <div>
+            <div className="review-header">No Reviews</div>
+            <ProductReviews singleProduct={singleProduct} />
+          </div>
         )}
       </div>
     </>
