@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getReviewsThunk } from "../../store/reviews";
 import OpenModalButton from "../OpenModalButton";
@@ -12,30 +12,32 @@ function SpotReviews({ singleProduct }) {
 
   const productReviews = useSelector((state) => state.review.product.Reviews);
   const sessionUser = useSelector((state) => state.session.user);
-  const product = useSelector((state) => state.product.singleProduct);
 
   useEffect(() => {
     // dispatch(loadSingleProductThunk(singleProduct.id));
     dispatch(getReviewsThunk(singleProduct.id));
   }, [dispatch, singleProduct]);
 
-  if (!productReviews) {
-    return null;
-  }
-
   if (!sessionUser) {
-    return productReviews.map((review) => (
-      <div key={review.id} className="one-review">
-        <div className="review-firstName">{review?.User?.firstName}</div>
-        <div className="review-date">
-          {new Date(review.createdAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-          })}
+    return productReviews
+      .map((review) => (
+        <div key={review.id} className="one-review">
+          <div className="review-firstName">
+            {review?.User?.firstName}{" "}
+            {Array.from({ length: review.stars }, (_, index) => (
+              <i key={index} className="fa fa-star star-review"></i>
+            ))}
+          </div>
+          <div className="review-date">
+            {new Date(review.createdAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+            })}
+          </div>
+          <div className="review-comment">{review.review}</div>
         </div>
-        <div className="review-comment">{review.review}</div>
-      </div>
-    ));
+      ))
+      .reverse();
   }
 
   const userReview = productReviews.find(
@@ -88,7 +90,13 @@ function SpotReviews({ singleProduct }) {
       {productReviews
         .map((review) => (
           <div key={review.id} className="one-review">
-            <div className="review-firstName">{review?.User?.firstName}</div>
+            <div className="review-firstName">
+              {review?.User?.firstName}{" "}
+              {Array.from({ length: review.stars }, (_, index) => (
+                <i key={index} className="fa fa-star star-review"></i>
+              ))}
+            </div>
+
             <div className="review-date">
               {new Date(review.createdAt).toLocaleDateString("en-US", {
                 year: "numeric",

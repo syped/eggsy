@@ -117,102 +117,102 @@ module.exports = {
           "27-inch Full HD (1920 x 1080) Fast IPS gaming monitor with ultrafast 280*Hz refresh rate designed for professional gamers and immersive gameplay",
         price: 299.99,
       },
-      // {
-      //   userId: 2,
-      //   name: "RAZER DEATHADDER V2",
-      //   category: "mouse",
-      //   description:
-      //     "Witness an icon reborn with the Razer DeathAdder V2—an ergonomic mouse designed with deadly curves and killer lines for a weapon that handles like no other. With next-gen sensor and switches packed into a lighter form factor.",
-      //   price: 69.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER BASILISK V3",
-      //   category: "mouse",
-      //   description:
-      //     "Create, control, and champion your playstyle with the new Razer Basilisk V3—the quintessential ergonomic gaming mouse for customized performance",
-      //   price: 69.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER VIPER V2 PRO",
-      //   category: "mouse",
-      //   description:
-      //     "Esports has a new apex predator. As successor to the award-winning Razer Viper Ultimate, our latest evolution is more than 20% lighter and armed with all-round upgrades for enhanced performance.",
-      //   price: 149.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "THE RAZER HUNTSMAN V3 PRO",
-      //   category: "keyboard",
-      //   description:
-      //     "Reach your full esports potential with the Razer Huntsman V3 Pro line—analog optical keyboards made for the pro in you.",
-      //   price: 249.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER BLACKWIDOW V4 PRO",
-      //   category: "keyboard",
-      //   description:
-      //     "Whether you seek greater control, customization, or immersion, get it all with a mechanical keyboard that’s the complete package.",
-      //   price: 229.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER DEATHSTALKER V2 PRO",
-      //   category: "keyboard",
-      //   description:
-      //     "Introducing our fastest low-profile optical keyboards, optimized for top-tier performance and durability. Featuring all-new low-profile switches within a lean, durable casing, experience ultra-responsive gaming designed for long-lasting ergonomic use.",
-      //   price: 249.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER BLACKSHARK V2 PRO",
-      //   category: "headset",
-      //   description:
-      //     "Outfitted with a triple threat of exceptional audio clarity, extreme comfort, and incredible noise isolation, the Razer BlackShark V2 line ensures you’ll always be within earshot of your next victory.",
-      //   price: 199.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER BARRACUDA",
-      //   category: "headset",
-      //   description:
-      //     "Whether you’re indoors or outdoors, it’s all the same to the Razer Barracuda—a wireless hybrid headset designed for both home gaming and mobile entertainment.",
-      //   price: 159.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "RAZER KRAKEN V3",
-      //   category: "headset",
-      //   description:
-      //     "Color your immersion with the Razer Kraken V3—a PC gaming headset powered by Razer Chroma™ RGB for dynamic lighting integrated with your games and devices.",
-      //   price: 79.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "ROG Swift Pro PG248QP",
-      //   category: "monitor",
-      //   description:
-      //     "The ROG Swift Pro PG248QP is the world's fastest esports gaming monitor. Designed for professional FPS gamers, with a 24.1-inch Esports-TN (E-TN) panel boasting a 540 Hz (OC) refresh rate and built-in NVIDIA® G-SYNC® processor",
-      //   price: 899.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "ROG Strix XG259QN",
-      //   category: "monitor",
-      //   description:
-      //     "ROG Strix XG259QN eSports Gaming Monitor — 25 inch (24.5 inch viewable) FHD (1920 x 1080), 380 Hz (OC), Fast IPS, 1 ms GTG (0.3 ms minimum), HDR",
-      //   price: 449.99,
-      // },
-      // {
-      //   userId: 2,
-      //   name: "ROG Strix XG256Q",
-      //   category: "monitor",
-      //   description:
-      //     "ROG Strix XG256Q Gaming Monitor – 24.5 inch Full HD (1920 x 1080), Fast IPS, 180Hz (Above 144Hz), 1ms GTG, Extreme Low Motion Blur, G-Sync compatible, FreeSync Premium technology, DisplayHDR™ 400, Tripod socket",
-      //   price: 199.99,
-      // },
+      {
+        userId: 2,
+        name: "RAZER DEATHADDER V2",
+        category: "mouse",
+        description:
+          "Witness an icon reborn with the Razer DeathAdder V2—an ergonomic mouse designed with deadly curves and killer lines for a weapon that handles like no other. With next-gen sensor and switches packed into a lighter form factor.",
+        price: 69.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER BASILISK V3",
+        category: "mouse",
+        description:
+          "Create, control, and champion your playstyle with the new Razer Basilisk V3—the quintessential ergonomic gaming mouse for customized performance",
+        price: 69.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER VIPER V2 PRO",
+        category: "mouse",
+        description:
+          "Esports has a new apex predator. As successor to the award-winning Razer Viper Ultimate, our latest evolution is more than 20% lighter and armed with all-round upgrades for enhanced performance.",
+        price: 149.99,
+      },
+      {
+        userId: 2,
+        name: "THE RAZER HUNTSMAN V3 PRO",
+        category: "keyboard",
+        description:
+          "Reach your full esports potential with the Razer Huntsman V3 Pro line—analog optical keyboards made for the pro in you.",
+        price: 249.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER BLACKWIDOW V4 PRO",
+        category: "keyboard",
+        description:
+          "Whether you seek greater control, customization, or immersion, get it all with a mechanical keyboard that’s the complete package.",
+        price: 229.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER DEATHSTALKER V2 PRO",
+        category: "keyboard",
+        description:
+          "Introducing our fastest low-profile optical keyboards, optimized for top-tier performance and durability. Featuring all-new low-profile switches within a lean, durable casing, experience ultra-responsive gaming designed for long-lasting ergonomic use.",
+        price: 249.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER BLACKSHARK V2 PRO",
+        category: "headset",
+        description:
+          "Outfitted with a triple threat of exceptional audio clarity, extreme comfort, and incredible noise isolation, the Razer BlackShark V2 line ensures you’ll always be within earshot of your next victory.",
+        price: 199.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER BARRACUDA",
+        category: "headset",
+        description:
+          "Whether you’re indoors or outdoors, it’s all the same to the Razer Barracuda—a wireless hybrid headset designed for both home gaming and mobile entertainment.",
+        price: 159.99,
+      },
+      {
+        userId: 2,
+        name: "RAZER KRAKEN V3",
+        category: "headset",
+        description:
+          "Color your immersion with the Razer Kraken V3—a PC gaming headset powered by Razer Chroma™ RGB for dynamic lighting integrated with your games and devices.",
+        price: 79.99,
+      },
+      {
+        userId: 2,
+        name: "ROG Swift Pro PG248QP",
+        category: "monitor",
+        description:
+          "The ROG Swift Pro PG248QP is the world's fastest esports gaming monitor. Designed for professional FPS gamers, with a 24.1-inch Esports-TN (E-TN) panel boasting a 540 Hz (OC) refresh rate and built-in NVIDIA® G-SYNC® processor",
+        price: 899.99,
+      },
+      {
+        userId: 2,
+        name: "ROG Strix XG259QN",
+        category: "monitor",
+        description:
+          "ROG Strix XG259QN eSports Gaming Monitor — 25 inch (24.5 inch viewable) FHD (1920 x 1080), 380 Hz (OC), Fast IPS, 1 ms GTG (0.3 ms minimum), HDR",
+        price: 449.99,
+      },
+      {
+        userId: 2,
+        name: "ROG Strix XG256Q",
+        category: "monitor",
+        description:
+          "ROG Strix XG256Q Gaming Monitor – 24.5 inch Full HD (1920 x 1080), Fast IPS, 180Hz (Above 144Hz), 1ms GTG, Extreme Low Motion Blur, G-Sync compatible, FreeSync Premium technology, DisplayHDR™ 400, Tripod socket",
+        price: 199.99,
+      },
     ]);
   },
 

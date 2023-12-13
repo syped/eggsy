@@ -331,13 +331,17 @@ img {
 
 .reviews {
   margin-top: 100px;
-  width: 100%;
-  text-align: start;
   margin-left: 10px;
+
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .review-header {
   font-size: 24pt;
+  text-decoration: underline;
 }
 
 .one-review {
@@ -346,6 +350,9 @@ img {
 
 .review-firstName {
   font-size: 18pt;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .create-products-button {
@@ -643,6 +650,11 @@ img {
 
 .rating-input .filled {
   color: #1db954;
+}
+
+.star-review {
+  color: #1db954;
+  font-size: 14pt;
 }
 
 .update-review-button > button {

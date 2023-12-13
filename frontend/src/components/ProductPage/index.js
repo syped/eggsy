@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { loadProductsThunk } from "../../store/products";
+import { getReviewsThunk } from "../../store/reviews";
 import { useParams } from "react-router-dom";
 import ProductReviews from "./ProductReviews";
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery from "react-image-gallery";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function ProductPage() {
   const dispatch = useDispatch();
@@ -13,7 +14,16 @@ function ProductPage() {
   const allProducts = useSelector(
     (state) => state.product.allProducts.Products
   );
+  const productReviews = useSelector((state) => state.review.product.Reviews);
   const { productId } = useParams();
+  const [dispatched, setDispatched] = useState(false);
+
+  useEffect(() => {
+    if (!dispatched && !productReviews?.length) {
+      dispatch(getReviewsThunk(productId));
+      setDispatched(true);
+    }
+  }, [dispatch, dispatched, productId, productReviews]);
 
   if (!allProducts || !allProducts.length) {
     dispatch(loadProductsThunk());
@@ -25,6 +35,10 @@ function ProductPage() {
   singleProduct = allProducts.find(
     (product) => product.id === parseInt(productId)
   );
+
+  // if (singleProduct && !productReviews) {
+  //   dispatch(getReviewsThunk(singleProduct.id));
+  // }
 
   // const images = [
   //   {
@@ -72,8 +86,14 @@ function ProductPage() {
         </div>
       </div>
       <div className="reviews">
-        <div className="review-header">Reviews</div>
-        <ProductReviews singleProduct={singleProduct} />
+        {productReviews && productReviews.length ? (
+          <div>
+            <div className="review-header">{productReviews.length} Reviews</div>
+            <ProductReviews singleProduct={singleProduct} />
+          </div>
+        ) : (
+          <div className="review-header">No Reviews</div>
+        )}
       </div>
     </>
   );
