@@ -34,10 +34,6 @@ function UpdateProductPage() {
     setPrice(product.price || "");
   }, [product]);
 
-  useEffect(() => {
-    setCategory(product.category || "");
-  }, [product.category]);
-
   if (!user) {
     return <Redirect to="/"></Redirect>;
   }

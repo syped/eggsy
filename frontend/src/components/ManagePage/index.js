@@ -23,6 +23,21 @@ function ManageProducts() {
     (product) => product.userId === user.id
   );
 
+  if (!userProductsArr.length) {
+    return (
+      <>
+        <div className="manage-product-title">
+          {`You currently have no products :(`}
+        </div>
+
+        <NavLink
+          to={`/products/create`}
+          className="manage-product-title manage-products-link"
+        >{`Add your first product!`}</NavLink>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="manage-page">
